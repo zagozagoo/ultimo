@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+main {
+    justify-content: center;
+    height: 100vh;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    background-image: url(../img/png/background-login.png);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    background-color: #4c1036;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 200px;
+    border-color: transparent;
+}
+
+.btn:hover {
+    background-color: #6b5ca5;
+    border-color: transparent;
+}
+
+#login-form {
+    max-width: 50vw;
+    min-width: 484.5px;
+    height: 540px;
+    background-color: #f4f2f8ea;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 35px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 570;
+}
+
+#login-form h2 {
+    text-align: center;
+    font-style: italic;
+}
+
+#login-form-title {
+    padding-bottom: 20px;
+}
+
+#form-first-column {
+    display: flex;
+    color: white;
+    height: 100%;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #4c1036;
+    border-top-left-radius: 35px;
+}
+
+#form-second-column {
+    flex-direction: column;
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.text-column {
+    margin: 10px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {}

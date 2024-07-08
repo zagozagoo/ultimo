@@ -1,0 +1,9 @@
+- Pagina de login
+- Modal ou pagina de alterar senha
+- Pagina principal
+	- Botões p/ 
+		Cadastrar usuario (ADM)
+		Cadastrar Serviço (Gerente)
+		Listar serviços (Colaborador)
+
+	
