@@ -31,13 +31,17 @@ public class AuthUserService implements AuthService {
             return new MessageEntityResponse<>(HttpStatus.UNAUTHORIZED, "User not found");
         }
 
-        String pass = user.getPassword().substring(0, user.getPassword().indexOf('$'));
         String salt = user.getPassword().substring(user.getPassword().indexOf('$') + 1, user.getPassword().length());
 
         String hashPassword = passwordService.applyCryptography(password, salt);
 
-        if (!hashPassword.equals(pass)) {
+        if (!hashPassword.equals(user.getPassword())) {
             return new MessageEntityResponse<>(HttpStatus.BAD_REQUEST, "Incorrect password!");
+        }
+
+        // by maria
+        if (user.getPassword().equals( "K/QHg41dVr3/YyWyoxFxRdC9hIrU73ol83nUH1GEIFM=$top")) {
+            return new MessageEntityResponse<>(HttpStatus.ACCEPTED, "You need change your password!", true);
         }
 
         try {

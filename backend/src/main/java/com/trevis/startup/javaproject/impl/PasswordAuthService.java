@@ -22,6 +22,7 @@ public class PasswordAuthService implements PasswordService{
         String hashedPassword = password + salt;
 
         try {
+            
             MessageDigest passDigest = MessageDigest.getInstance("SHA-256");
             byte[] hash = passDigest.digest(hashedPassword.getBytes(StandardCharsets.UTF_8));
 

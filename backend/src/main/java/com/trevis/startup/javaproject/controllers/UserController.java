@@ -39,7 +39,7 @@ public class UserController {
             return new MessagesEntityResponse(messages);
         }
 
-        if (jwtService.jwtGetRole(token) != 1) {
+        if (jwtService.jwtGetRole(token) != 0) {
             messages.add(new MessageEntityResponse<>(HttpStatus.FORBIDDEN, "User not authorized"));
             return new MessagesEntityResponse(messages);
         }

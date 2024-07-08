@@ -30,14 +30,15 @@ public class DatabaseUserService implements UserService {
     public UserEntity create(UserEntityPayload payload, Long departmentId) {
         UserEntity user = new UserEntity();
 
-        if (repo.findByUsername(payload.userName()).isEmpty()) {
+        if (!repo.findByUsername(payload.userName()).isEmpty()) {
             return null;
         }
 
         user.setUsername(payload.userName());
         user.setRole(payload.role());
         user.setDepartmentEntity(departmentService.get(departmentId));
-        
+        user.setPassword("K/QHg41dVr3/YyWyoxFxRdC9hIrU73ol83nUH1GEIFM=$top"); // Teste123!banana
+
         repo.save(user);
         return user;
     }
